@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+def main = 'com.github.exeos.rtp.AgentMain'
+group = 'com.github.exeos'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.formdev:flatlaf:1.2'
+    implementation 'com.intellij:forms_rt:7.0.3'
+}
+
+jar {
+    manifest {
+        attributes(
+            'Premain-Class': main,
+            'Can-Redefine-Classes': 'true',
+            'Can-Retransform-Classes': 'true',
+            'Can-Set-Native-Method-Prefix': 'true'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

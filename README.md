@@ -5,4 +5,4 @@ Patch the Java Runtime of an running JVM.
 
 Inject an Agent in jvm<br>
 Agent opens GUI with options<br>
-Agent can read and write fields, rewrite classes etc.<br>
+Agent can read and write fields, rewrite classes etc.

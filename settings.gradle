@@ -1,0 +1,3 @@
+rootProject.name = 'RtP'
+include 'rtp-agent'
+include 'rtp-injector'
